@@ -1,0 +1,22 @@
+<view class="recharge-package-selector">
+  <view wx:if="{{!packages.length}}" class="recharge-package-selector__empty">
+    <text>{{emptyText}}</text>
+  </view>
+
+  <view
+    wx:for="{{packages}}"
+    wx:key="code"
+    class="recharge-package-selector__card {{selectedCode === item.code ? 'recharge-package-selector__card--selected' : ''}}"
+    data-code="{{item.code}}"
+    bindtap="handleSelect"
+  >
+    <view class="recharge-package-selector__row">
+      <text class="recharge-package-selector__title">{{item.title}}</text>
+      <text class="recharge-package-selector__price">{{item.amountText}}</text>
+    </view>
+    <view class="recharge-package-selector__meta">
+      <text>{{item.creditedPointsText}}</text>
+      <text class="recharge-package-selector__check">{{selectedCode === item.code ? '已选择' : '选择套餐'}}</text>
+    </view>
+  </view>
+</view>

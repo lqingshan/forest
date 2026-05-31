@@ -1,0 +1,6 @@
+.me-actions {
+  padding: 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}

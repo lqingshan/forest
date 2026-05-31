@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "积分流水",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "point-log-panel": "../../modules/forest-point/wechat-miniapp/logs/point-log-panel/index"
+  }
+}

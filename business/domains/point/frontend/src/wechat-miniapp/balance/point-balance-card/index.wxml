@@ -1,0 +1,8 @@
+<view class="point-balance-card">
+  <text class="point-balance-card__label">当前积分</text>
+  <text class="point-balance-card__value">{{balance ? balance.balance : emptyBalance.balance}}</text>
+  <view class="point-balance-card__meta">
+    <text>累计收入 {{balance ? balance.totalIncome : emptyBalance.totalIncome}}</text>
+    <text>累计支出 {{balance ? balance.totalSpend : emptyBalance.totalSpend}}</text>
+  </view>
+</view>

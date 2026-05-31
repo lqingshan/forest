@@ -1,0 +1,6 @@
+services:
+  trade-leads-backend:
+    ports:
+      - "${TRADE_LEADS_BACKEND_PORT:-8081}:8081"
+    volumes:
+      - ${TRADE_LEADS_WECHAT_PAY_SECRET_DIR:?set TRADE_LEADS_WECHAT_PAY_SECRET_DIR to the local WeChat Pay cert directory}:/run/secrets/wechat-pay:ro

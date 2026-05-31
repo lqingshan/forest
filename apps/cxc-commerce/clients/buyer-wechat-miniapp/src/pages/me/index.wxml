@@ -1,0 +1,15 @@
+<view class="shell-page">
+  <view class="shell-stack">
+    <text wx:if="{{errorMessage}}" class="shell-error">{{errorMessage}}</text>
+
+    <current-user-card
+      user="{{user}}"
+      uploading-avatar="{{avatarUploading}}"
+      bind:avatarclick="handleChangeAvatar"
+    />
+
+    <view class="shell-surface">
+      <button class="shell-button-ghost" bindtap="handleLogout">退出登录</button>
+    </view>
+  </view>
+</view>

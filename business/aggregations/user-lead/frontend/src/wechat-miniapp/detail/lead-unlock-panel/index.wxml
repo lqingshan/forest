@@ -1,0 +1,10 @@
+<view wx:if="{{lead && !lead.unlocked}}" class="lead-unlock-panel">
+  <text class="lead-unlock-panel__title">联系方式已遮罩</text>
+  <text class="lead-unlock-panel__desc">解锁后即可复制电话、邮箱和网站。本次解锁消耗 {{unlockCost}} 积分。</text>
+  <button class="lead-unlock-panel__button" loading="{{unlocking}}" bindtap="handleUnlock">去解锁</button>
+</view>
+
+<view wx:if="{{lead && lead.unlocked}}" class="lead-unlock-panel lead-unlock-panel--success">
+  <text class="lead-unlock-panel__title">已完成解锁</text>
+  <text class="lead-unlock-panel__desc">当前线索的联系方式已经全部可见，点击字段即可复制。</text>
+</view>

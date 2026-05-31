@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "积分充值",
+  "usingComponents": {
+    "recharge-panel": "../../modules/forest-recharge/wechat-miniapp/recharge/recharge-panel/index"
+  }
+}

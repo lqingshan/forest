@@ -1,0 +1,26 @@
+<view class="recharge-result-card">
+  <view class="recharge-result-card__hero recharge-result-card__hero--{{status}}">
+    <text class="recharge-result-card__eyebrow">Payment Result</text>
+    <text class="recharge-result-card__title">{{title}}</text>
+    <text class="recharge-result-card__desc">{{description}}</text>
+  </view>
+
+  <view wx:if="{{order}}" class="recharge-result-card__surface">
+    <view class="recharge-result-card__row">
+      <text class="recharge-result-card__label">充值单号</text>
+      <text>{{order.rechargeNo}}</text>
+    </view>
+    <view class="recharge-result-card__row">
+      <text class="recharge-result-card__label">套餐</text>
+      <text>{{order.packageCode}}</text>
+    </view>
+    <view class="recharge-result-card__row">
+      <text class="recharge-result-card__label">到账积分</text>
+      <text>{{order.creditedPoints}}</text>
+    </view>
+    <view class="recharge-result-card__row">
+      <text class="recharge-result-card__label">订单状态</text>
+      <text>{{order.status}}</text>
+    </view>
+  </view>
+</view>

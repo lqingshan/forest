@@ -1,0 +1,46 @@
+<view class="file-upload-panel panel-class">
+  <view class="file-upload-panel__heading heading-class">
+    <text class="file-upload-panel__title">{{copy.title}}</text>
+  </view>
+
+  <button
+    class="file-upload-panel__button button-class"
+    loading="{{uploading}}"
+    disabled="{{disabled || uploading}}"
+    bindtap="handleChooseFile"
+  >
+    {{uploading ? copy.uploadingText : copy.buttonText}}
+  </button>
+
+  <view wx:if="{{uploading}}" class="file-upload-panel__progress progress-class">
+    <view class="file-upload-panel__progress-bar" style="width: {{progress}}%;"></view>
+  </view>
+  <text wx:if="{{uploading}}" class="file-upload-panel__progress-text">{{progress}}%</text>
+
+  <view wx:if="{{files.length}}" class="file-upload-panel__files file-list-class">
+    <view wx:for="{{files}}" wx:key="name" class="file-upload-panel__file file-item-class">
+      <view class="file-upload-panel__file-main">
+        <text class="file-upload-panel__file-name">{{item.name}}</text>
+        <text wx:if="{{item.errorMessage}}" class="file-upload-panel__file-error">{{item.errorMessage}}</text>
+      </view>
+      <view class="file-upload-panel__file-action">
+        <text wx:if="{{item.status == 'SUCCESS'}}" class="file-upload-panel__file-status">成功</text>
+        <text wx:elif="{{item.status == 'FAILED'}}" class="file-upload-panel__file-status">失败</text>
+        <text wx:else class="file-upload-panel__file-progress">{{item.progress}}%</text>
+        <button
+          wx:if="{{item.status == 'FAILED'}}"
+          class="file-upload-panel__retry retry-button-class"
+          size="mini"
+          plain="{{true}}"
+          disabled="{{uploading}}"
+          data-index="{{index}}"
+          catchtap="handleRetryFile"
+        >
+          重试
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <text wx:if="{{errorMessage}}" class="file-upload-panel__error error-class">{{errorMessage}}</text>
+</view>

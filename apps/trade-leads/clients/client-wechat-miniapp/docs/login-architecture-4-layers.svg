@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1120" viewBox="0 0 1680 1120" role="img" aria-labelledby="title desc">
+  <title id="title">微信小程序登录四层职责图</title>
+  <desc id="desc">展示微信小程序登录架构中的四层职责：页面触发层、App 装配层、Base Frontend 通用机制层、Business 用户能力层，以及它们之间的主要依赖关系。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .subtitle { font: 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+
+      .layer { stroke-width: 2; rx: 26; ry: 26; }
+      .layer-1 { fill: #eff6ff; stroke: #93c5fd; }
+      .layer-2 { fill: #f0fdf4; stroke: #86efac; }
+      .layer-3 { fill: #fffbeb; stroke: #fcd34d; }
+      .layer-4 { fill: #fef2f2; stroke: #fca5a5; }
+
+      .layerTitle { font: 700 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .layerHint { font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+
+      .box { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.8; rx: 16; ry: 16; }
+      .boxTitle { font: 700 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .boxPath { font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #475569; }
+      .boxBody { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+
+      .arrow { fill: none; stroke: #475569; stroke-width: 2.5; marker-end: url(#arrow); }
+      .arrowLabel { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .legend { font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1680" height="1120"/>
+  <text class="title" x="840" y="46" text-anchor="middle">微信小程序登录四层职责图</text>
+  <text class="subtitle" x="840" y="74" text-anchor="middle">页面负责触发，App 负责装配，Base Frontend 提供通用机制，Business 提供用户业务 API</text>
+
+  <!-- Layer 1 -->
+  <rect class="layer layer-1" x="50" y="110" width="1580" height="200"/>
+  <text class="layerTitle" x="76" y="145">第 1 层：页面触发层</text>
+  <text class="layerHint" x="76" y="168">页面只负责交互、生命周期、loading、错误展示和 redirect，不实现登录底层细节</text>
+
+  <rect class="box" x="92" y="196" width="620" height="86"/>
+  <text class="boxTitle" x="116" y="222">登录页 Page</text>
+  <text class="boxPath" x="116" y="243">apps/trade-leads/clients/client-wechat-miniapp/src/pages/login/index.ts</text>
+  <text class="boxBody" x="116" y="266">职责：点击“微信一键登录”后调用 loginWithWechat，处理 loading / error / redirect</text>
+
+  <rect class="box" x="908" y="196" width="620" height="86"/>
+  <text class="boxTitle" x="932" y="222">受保护页面</text>
+  <text class="boxPath" x="932" y="243">pages/leads / unlocked / lead-detail / recharge / point-logs / payment-result / me</text>
+  <text class="boxBody" x="932" y="266">职责：进入页面时调用 ensureClientSession，未登录则跳登录页</text>
+
+  <!-- Layer 2 -->
+  <rect class="layer layer-2" x="50" y="340" width="1580" height="250"/>
+  <text class="layerTitle" x="76" y="375">第 2 层：App 装配层</text>
+  <text class="layerHint" x="76" y="398">当前 trade-leads 小程序自己的配置定义与 app facade 都在这一层组装</text>
+
+  <rect class="box" x="92" y="430" width="470" height="120"/>
+  <text class="boxTitle" x="116" y="457">App Definition</text>
+  <text class="boxPath" x="116" y="479">apps/trade-leads/clients/client-wechat-miniapp/src/app-definition.ts</text>
+  <text class="boxBody" x="116" y="503">职责：注入 user 业务 API、后端地址、登录页、默认页、一级页面、storage prefix</text>
+  <text class="boxBody" x="116" y="523">它只保存 trade-leads 特定配置，不承载通用 platform/session 实现</text>
+
+  <rect class="box" x="605" y="430" width="470" height="120"/>
+  <text class="boxTitle" x="629" y="457">Miniapp App Facade</text>
+  <text class="boxPath" x="629" y="479">apps/trade-leads/clients/client-wechat-miniapp/src/miniapp-app.ts</text>
+  <text class="boxBody" x="629" y="503">职责：调用 createWechatMiniappClientApp，暴露 auth/router/payment/lifecycle</text>
+  <text class="boxBody" x="629" y="523">页面统一从这里拿 loginWithWechat、ensureClientSession、requestWechatMiniappPayment 等能力</text>
+
+  <rect class="box" x="1118" y="430" width="410" height="120"/>
+  <text class="boxTitle" x="1142" y="457">应用入口</text>
+  <text class="boxPath" x="1142" y="479">apps/trade-leads/clients/client-wechat-miniapp/src/app.ts</text>
+  <text class="boxBody" x="1142" y="503">职责：onLaunch 时调用 configureClientSession、</text>
+  <text class="boxBody" x="1142" y="523">hydrateClientSession、restoreClientSession</text>
+
+  <!-- Layer 3 -->
+  <rect class="layer layer-3" x="50" y="620" width="1580" height="220"/>
+  <text class="layerTitle" x="76" y="655">第 3 层：Base Frontend 通用机制层</text>
+  <text class="layerHint" x="76" y="678">这一层不关心 trade-leads 业务，只提供多小程序可复用的通用机制</text>
+
+  <rect class="box" x="92" y="710" width="690" height="98"/>
+  <text class="boxTitle" x="116" y="737">通用 Session 编排器</text>
+  <text class="boxPath" x="116" y="759">base-frontend/packages/wechat-miniapp-client-session/src/index.ts</text>
+  <text class="boxBody" x="116" y="783">职责：createWechatClientSession 负责登录、恢复、refresh、401、登录守卫、旧请求不覆盖新登录态</text>
+
+  <rect class="box" x="848" y="710" width="680" height="98"/>
+  <text class="boxTitle" x="872" y="737">微信平台适配包</text>
+  <text class="boxPath" x="872" y="759">base-frontend/packages/wechat-miniapp-platform/src/*</text>
+  <text class="boxBody" x="872" y="783">职责：runtime、storage、session-store、router、wx.request、wx.login、wx.requestPayment 适配</text>
+
+
+  <!-- Layer 4 -->
+  <rect class="layer layer-4" x="50" y="870" width="1580" height="190"/>
+  <text class="layerTitle" x="76" y="905">第 4 层：Business 用户能力层</text>
+  <text class="layerHint" x="76" y="928">这一层知道用户业务接口，但不知道小程序 route、storagePrefix、wx.request 这些平台细节</text>
+
+  <rect class="box" x="92" y="966" width="700" height="66"/>
+  <text class="boxTitle" x="116" y="992">用户登录业务 API</text>
+  <text class="boxPath" x="116" y="1013">business/domains/user/frontend/src/wechat-miniapp/auth/api.ts</text>
+  <text class="boxBody" x="116" y="1028">职责：loginByWechat / refreshAccessToken</text>
+
+  <rect class="box" x="828" y="966" width="700" height="66"/>
+  <text class="boxTitle" x="852" y="992">当前用户业务 API</text>
+  <text class="boxPath" x="852" y="1013">business/domains/user/frontend/src/wechat-miniapp/me/api.ts</text>
+  <text class="boxBody" x="852" y="1028">职责：fetchCurrentUser</text>
+
+  <!-- Arrows -->
+  <path class="arrow" d="M400 282 C400 340, 300 340, 300 430"/>
+  <text class="arrowLabel" x="312" y="347">触发 loginWithWechat</text>
+
+  <path class="arrow" d="M1220 282 C1220 340, 300 340, 300 430"/>
+  <text class="arrowLabel" x="946" y="330">触发 ensureClientSession</text>
+
+  <path class="arrow" d="M1320 430 C1320 390, 1320 390, 1320 340"/>
+  <text class="arrowLabel" x="1332" y="384">启动时调用门面</text>
+
+  <path class="arrow" d="M562 490 C590 490, 590 490, 605 490"/>
+  <text class="arrowLabel" x="568" y="476">注入平台能力</text>
+
+  <path class="arrow" d="M327 550 C327 640, 327 640, 327 710"/>
+  <text class="arrowLabel" x="340" y="635">调用 createWechatClientSession</text>
+
+  <path class="arrow" d="M640 550 C640 640, 1060 640, 1060 710"/>
+  <text class="arrowLabel" x="786" y="636">提供 router / sessionStore / wx.* 能力</text>
+
+  <path class="arrow" d="M430 808 C430 900, 430 900, 430 966"/>
+  <text class="arrowLabel" x="444" y="896">调用 loginByWechat / refreshAccessToken</text>
+
+  <path class="arrow" d="M600 808 C600 900, 1160 900, 1160 966"/>
+  <text class="arrowLabel" x="792" y="894">调用 fetchCurrentUser</text>
+
+  <text class="legend" x="50" y="1090">阅读口诀：页面触发，App 装配，Base Frontend 提供通用机制，Business 提供用户业务 API。</text>
+</svg>

@@ -1,0 +1,5 @@
+.login-page__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}

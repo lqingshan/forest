@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "unlocked-lead-summary": "../unlocked-lead-summary/index",
+    "unlocked-lead-card": "../unlocked-lead-card/index",
+    "unlocked-lead-empty": "../unlocked-lead-empty/index",
+    "unlocked-lead-loading": "../unlocked-lead-loading/index"
+  }
+}

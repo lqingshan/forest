@@ -1,0 +1,10 @@
+.lead-detail-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.lead-detail-panel__error {
+  color: #b2504d;
+  font-size: 26rpx;
+}

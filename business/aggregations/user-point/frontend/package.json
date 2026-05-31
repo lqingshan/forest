@@ -1,0 +1,28 @@
+{
+  "name": "@forest/user-point",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    "./platform-web/query": "./src/platform-web/query/index.ts"
+  },
+  "dependencies": {
+    "@forest/api-contracts": "workspace:*",
+    "@forest/http-client": "workspace:*",
+    "@forest/point": "workspace:*",
+    "@forest/user": "workspace:*",
+    "vue": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "workspace:*",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "typescript": "workspace:*",
+    "vite": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

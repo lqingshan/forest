@@ -1,0 +1,18 @@
+services:
+  gateway:
+    build:
+      context: ../..
+      dockerfile: apps/gateway/Dockerfile
+      args:
+        FOREST_ENV: ${FOREST_ENV:-local}
+        TRADE_LEADS_BACKEND_NODE_1: ${TRADE_LEADS_BACKEND_NODE_1:-trade-leads-backend:8081}
+        TRADE_LEADS_BACKEND_NODE_2: ${TRADE_LEADS_BACKEND_NODE_2:-}
+    container_name: forest-gateway
+    mem_limit: 256m
+    mem_reservation: 128m
+    networks:
+      - forest_network
+
+networks:
+  forest_network:
+    name: ${FOREST_DOCKER_NETWORK:-forest_network}

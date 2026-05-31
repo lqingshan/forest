@@ -1,0 +1,8 @@
+export * from './api'
+export * from './types'
+export { default as UserCard } from './UserCard.vue'
+export { default as UserFilterBar } from './UserFilterBar.vue'
+export { default as UserTable } from './UserTable.vue'
+export { default as UserStatusActions } from './UserStatusActions.vue'
+export { default as UserDetailPanel } from './UserDetailPanel.vue'
+export { default as UserManagementWorkspace } from './UserManagementWorkspace.vue'

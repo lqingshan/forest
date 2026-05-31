@@ -1,0 +1,22 @@
+<view class="lead-list-card" bindtap="handleTap">
+  <view class="lead-list-card__meta">
+    <text>{{lead.country}}</text>
+    <text class="lead-list-card__pill {{lead.unlocked ? 'lead-list-card__pill--success' : 'lead-list-card__pill--pending'}}">{{lead.statusText}}</text>
+  </view>
+  <text class="lead-list-card__name">{{lead.name}}</text>
+  <text class="lead-list-card__category">{{lead.category}}</text>
+  <view class="lead-list-card__info">
+    <view class="lead-list-card__info-item">
+      <text class="lead-list-card__label">电话</text>
+      <text>{{lead.phone}}</text>
+    </view>
+    <view class="lead-list-card__info-item">
+      <text class="lead-list-card__label">网站</text>
+      <text>{{lead.website}}</text>
+    </view>
+  </view>
+  <view class="lead-list-card__action">
+    <text>查看详情</text>
+    <text>›</text>
+  </view>
+</view>

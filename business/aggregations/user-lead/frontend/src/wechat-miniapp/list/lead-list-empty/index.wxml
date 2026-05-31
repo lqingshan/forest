@@ -1,0 +1,3 @@
+<view class="lead-list-empty">
+  <text>{{emptyText}}</text>
+</view>

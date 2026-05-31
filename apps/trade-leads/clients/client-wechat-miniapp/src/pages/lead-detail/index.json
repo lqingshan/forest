@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "线索详情",
+  "usingComponents": {
+    "lead-detail-panel": "../../modules/forest-user-lead/wechat-miniapp/detail/lead-detail-panel/index"
+  }
+}

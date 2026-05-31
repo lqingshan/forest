@@ -1,0 +1,13 @@
+<view class="recharge-panel">
+  <recharge-summary balance="{{balance}}"/>
+
+  <text wx:if="{{errorMessage}}" class="recharge-panel__error">{{errorMessage}}</text>
+
+  <recharge-package-selector
+    packages="{{packages}}"
+    selected-code="{{selectedCode}}"
+    bind:selectpackage="handleSelectPackage"
+  />
+
+  <recharge-submit-button paying="{{paying}}" bind:pay="handlePay"/>
+</view>

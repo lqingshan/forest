@@ -1,0 +1,16 @@
+<view class="bottom-nav">
+  <view class="bottom-nav__shell">
+    <view class="bottom-nav__item {{current === 'leads' ? 'bottom-nav__item--active' : ''}}" data-target="leads" bindtap="handleTap">
+      <text class="bottom-nav__label">线索</text>
+      <text class="bottom-nav__dot"></text>
+    </view>
+    <view class="bottom-nav__item {{current === 'unlocked' ? 'bottom-nav__item--active' : ''}}" data-target="unlocked" bindtap="handleTap">
+      <text class="bottom-nav__label">已解锁</text>
+      <text class="bottom-nav__dot"></text>
+    </view>
+    <view class="bottom-nav__item {{current === 'me' ? 'bottom-nav__item--active' : ''}}" data-target="me" bindtap="handleTap">
+      <text class="bottom-nav__label">我的</text>
+      <text class="bottom-nav__dot"></text>
+    </view>
+  </view>
+</view>

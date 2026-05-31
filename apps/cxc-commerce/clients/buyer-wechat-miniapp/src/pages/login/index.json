@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "微信登录",
+  "usingComponents": {
+    "wechat-login-panel": "../../modules/forest-user/wechat-miniapp/auth/components/wechat-login-panel/index",
+    "wechat-phone-login-panel": "../../modules/forest-user/wechat-miniapp/auth/components/wechat-phone-login-panel/index"
+  }
+}

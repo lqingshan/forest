@@ -1,0 +1,10 @@
+<view class="shell-page login-page">
+  <view class="shell-stack">
+    <wechat-phone-login-panel
+      submitting="{{submitting}}"
+      error-message="{{errorMessage}}"
+      bind:phonelogin="handleWechatPhoneLogin"
+      bind:phoneerror="handleWechatPhoneError"
+    />
+  </view>
+</view>

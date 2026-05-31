@@ -1,0 +1,20 @@
+<!-- 外层页面容器。shell-page 是 app 层统一页面壳样式，不属于 point 业务本身。 -->
+<view class="shell-page">
+  <!-- shell-stack 负责把这一页里的几个区块按纵向间距堆起来。 -->
+  <view class="shell-stack">
+    <!-- 返回按钮区域。bindtap="goBack" 表示：用户点这个区域时，触发 Page 里的 goBack 方法。 -->
+    <view class="shell-back" bindtap="goBack">
+      <!-- 这是返回箭头字符。 -->
+      <text>‹</text>
+      <!-- 这是返回按钮上的文案。 -->
+      <text>返回</text>
+    </view>
+
+    <!-- point-log-panel 是 point 模块提供的业务组合组件。
+         它内部会继续组合 summary、错误提示和流水列表。
+         logs="{{logs}}"：把当前页面 data 里的流水数据交给业务区块渲染。
+         loading="{{loading}}"：告诉业务区块当前是否处于首屏加载阶段，用来决定空态是否展示。
+         error-message="{{errorMessage}}"：把页面当前错误文案交给业务区块统一展示。 -->
+    <point-log-panel logs="{{logs}}" loading="{{loading}}" error-message="{{errorMessage}}"/>
+  </view>
+</view>

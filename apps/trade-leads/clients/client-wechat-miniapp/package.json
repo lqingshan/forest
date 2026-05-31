@@ -1,0 +1,30 @@
+{
+  "name": "@forest/trade-leads-client-wechat-miniapp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "check:architecture": "node scripts/check-architecture.mjs",
+    "build": "pnpm run typecheck && pnpm run check:architecture && node scripts/build-miniapp.mjs",
+    "build:local": "MINIAPP_API_BASE_URL=https://localleads.haitunai.cn MINIAPP_APP_CODE=trade-leads-miniapp pnpm run build",
+    "build:prod": "MINIAPP_API_BASE_URL=https://leads.haitunai.cn MINIAPP_APP_CODE=trade-leads-miniapp pnpm run build",
+    "dev": "node scripts/build-miniapp.mjs --watch"
+  },
+  "dependencies": {
+    "@forest/file": "workspace:*",
+    "@forest/http-client": "workspace:*",
+    "@forest/lead": "workspace:*",
+    "@forest/payment": "workspace:*",
+    "@forest/point": "workspace:*",
+    "@forest/recharge": "workspace:*",
+    "@forest/user-lead": "workspace:*",
+    "@forest/user": "workspace:*",
+    "@forest/wechat-miniapp-ui": "workspace:*",
+    "@forest/wechat-miniapp-client-app": "workspace:*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12",
+    "typescript": "workspace:*"
+  }
+}

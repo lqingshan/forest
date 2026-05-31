@@ -1,0 +1,20 @@
+{
+  "name": "@forest/recharge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    "./wechat-miniapp/recharge": "./src/wechat-miniapp/recharge/index.ts"
+  },
+  "dependencies": {
+    "@forest/http-client": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

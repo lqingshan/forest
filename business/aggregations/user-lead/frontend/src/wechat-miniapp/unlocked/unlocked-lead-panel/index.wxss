@@ -1,0 +1,10 @@
+.unlocked-lead-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.unlocked-lead-panel__error {
+  color: #b2504d;
+  font-size: 26rpx;
+}

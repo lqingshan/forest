@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "lead-list-summary": "../lead-list-summary/index",
+    "lead-search-bar": "../lead-search-bar/index",
+    "lead-list-card": "../lead-list-card/index",
+    "lead-list-empty": "../lead-list-empty/index",
+    "lead-list-loading": "../lead-list-loading/index"
+  }
+}

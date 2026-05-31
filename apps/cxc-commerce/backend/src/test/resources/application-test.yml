@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:cxc_commerce_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: false
+
+jwt:
+  secret: test-secret-key-must-be-at-least-32-bytes-long
+
+forest:
+  redis:
+    app-code: cxc-commerce
+  sms:
+    provider: mock
+  verification:
+    sms:
+      code: 121314
+  client-apps:
+    cxc-commerce-buyer-wechat-miniapp:
+      client-type: WECHAT_MINIAPP
+      enabled: true
+    cxc-commerce-buyer-mobile-h5:
+      client-type: MOBILE_H5
+      enabled: true
+    cxc-commerce-merchant-web:
+      client-type: PC_WEB
+      enabled: true
+    cxc-commerce-platform-web:
+      client-type: PC_WEB
+      enabled: true
+  wechat:
+    miniapps:
+      cxc-commerce-buyer-wechat-miniapp:
+        mock-enabled: true

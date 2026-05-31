@@ -1,0 +1,47 @@
+{
+  "name": "forest-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
+  "volta": {
+    "node": "20.18.0",
+    "pnpm": "10.33.0"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "build:trade-leads-miniapp": "pnpm --filter @forest/trade-leads-client-wechat-miniapp build",
+    "build:trade-leads-miniapp:local": "pnpm --filter @forest/trade-leads-client-wechat-miniapp build:local",
+    "build:trade-leads-miniapp:prod": "pnpm --filter @forest/trade-leads-client-wechat-miniapp build:prod",
+    "build:trade-leads-platform-web": "pnpm --filter @forest/trade-leads-platform-web build",
+    "build:cxc-miniapp": "pnpm --filter @forest/cxc-commerce-buyer-wechat-miniapp build",
+    "build:cxc-miniapp:local": "pnpm --filter @forest/cxc-commerce-buyer-wechat-miniapp build:local",
+    "build:cxc-miniapp:prod": "pnpm --filter @forest/cxc-commerce-buyer-wechat-miniapp build:prod",
+    "build:cxc-merchant-web": "pnpm --filter @forest/cxc-commerce-merchant-web build",
+    "build:cxc-platform-web": "pnpm --filter @forest/cxc-commerce-platform-web build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.4.6",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "jsdom": "^25.0.1",
+    "turbo": "^2.4.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.1",
+    "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "vue": "^3.5.13",
+      "typescript": "^5.7.3",
+      "vite": "^6.2.1",
+      "jsdom": "^25.0.1",
+      "@vue/test-utils": "^2.4.6",
+      "@vitejs/plugin-vue": "^5.2.0",
+      "vitest": "^2.1.8"
+    }
+  }
+}

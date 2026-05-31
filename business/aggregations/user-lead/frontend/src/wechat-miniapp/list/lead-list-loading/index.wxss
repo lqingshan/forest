@@ -1,0 +1,5 @@
+.lead-list-loading {
+  text-align: center;
+  padding: 12rpx 0;
+  color: #60758a;
+}

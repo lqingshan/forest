@@ -1,0 +1,7 @@
+<view class="point-log-panel">
+  <point-log-summary/>
+
+  <text wx:if="{{errorMessage}}" class="point-log-panel__error">{{errorMessage}}</text>
+
+  <point-log-list logs="{{logs}}" empty="{{!loading && !logs.length}}"/>
+</view>

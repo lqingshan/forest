@@ -1,0 +1,22 @@
+{
+  "name": "@forest/wechat-miniapp-client-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@forest/wechat-miniapp-client-session": "workspace:*",
+    "@forest/wechat-miniapp-platform": "workspace:*"
+  },
+  "devDependencies": {
+    "@forest/http-client": "workspace:*",
+    "typescript": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

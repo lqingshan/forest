@@ -1,0 +1,11 @@
+{
+  "extends": "../../../../base-frontend/tsconfig.base.json",
+  "include": ["src/**/*", "scripts/**/*.mjs"],
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": false,
+    "declaration": false,
+    "declarationMap": false,
+    "types": []
+  }
+}

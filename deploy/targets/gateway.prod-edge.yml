@@ -1,0 +1,7 @@
+services:
+  gateway:
+    ports:
+      - "${FOREST_GATEWAY_HTTP_PORT:-80}:80"
+      - "${FOREST_GATEWAY_HTTPS_PORT:-443}:443"
+    volumes:
+      - ${FOREST_GATEWAY_SSL_DIR:?set FOREST_GATEWAY_SSL_DIR to the production ssl directory}:/etc/nginx/ssl:ro

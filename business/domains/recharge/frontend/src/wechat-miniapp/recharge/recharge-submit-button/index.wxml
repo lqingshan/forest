@@ -1,0 +1,1 @@
+<button class="recharge-submit-button" loading="{{paying}}" bindtap="handlePay">{{payButtonText}}</button>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "bottom-nav": "/components/bottom-nav/index",
+    "current-user-card": "../../modules/forest-user/wechat-miniapp/me/current-user-card/index",
+    "point-balance-card": "../../modules/forest-point/wechat-miniapp/balance/point-balance-card/index"
+  }
+}

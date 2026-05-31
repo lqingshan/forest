@@ -1,0 +1,51 @@
+<view wx:if="{{model}}" class="forest-single-file-viewer viewer-class">
+  <view class="forest-single-file-viewer__media media-class">
+    <image
+      wx:if="{{model.kind === 'IMAGE' && model.previewUrl}}"
+      class="forest-single-file-viewer__image"
+      src="{{model.previewUrl}}"
+      mode="aspectFill"
+      bindtap="handlePreviewImage"
+    />
+    <video
+      wx:elif="{{model.kind === 'VIDEO' && model.previewUrl}}"
+      class="forest-single-file-viewer__video"
+      src="{{model.previewUrl}}"
+      controls
+    />
+    <button
+      wx:elif="{{model.kind === 'AUDIO' && model.previewUrl}}"
+      class="forest-single-file-viewer__audio-button button-class"
+      bindtap="handleToggleAudio"
+    >
+      {{audioPlaying ? '暂停音频' : '播放音频'}}
+    </button>
+    <view wx:else class="forest-single-file-viewer__placeholder">
+      <text>{{model.kind}}</text>
+    </view>
+  </view>
+
+  <view class="forest-single-file-viewer__body body-class">
+    <text class="forest-single-file-viewer__title">{{model.title}}</text>
+    <text class="forest-single-file-viewer__meta">{{model.contentType || 'unknown'}}</text>
+    <view class="forest-single-file-viewer__actions">
+      <button
+        wx:if="{{model.kind === 'DOCUMENT' && model.canPreview}}"
+        class="forest-single-file-viewer__button button-class"
+        bindtap="handleOpenDocument"
+      >
+        预览
+      </button>
+      <button
+        wx:if="{{model.canDownload}}"
+        class="forest-single-file-viewer__button button-class"
+        bindtap="handleDownload"
+      >
+        下载
+      </button>
+      <text wx:if="{{!model.canPreview && !model.canDownload}}" class="forest-single-file-viewer__unavailable">
+        文件地址不可用
+      </text>
+    </view>
+  </view>
+</view>

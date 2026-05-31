@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.forest</groupId>
+    <artifactId>forest-backend-cxc-commerce-reactor</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>starter-common</module>
+        <module>starter-auth</module>
+        <module>starter-wechat</module>
+        <module>starter-carrier-auth</module>
+        <module>starter-redis</module>
+        <module>starter-sms</module>
+        <module>starter-object-storage</module>
+        <module>starter-ocr</module>
+        <module>../business/common/backend</module>
+        <module>../business/domains/notification/backend</module>
+        <module>../business/domains/verification/backend</module>
+        <module>../business/domains/user/backend</module>
+        <module>../business/domains/file/backend</module>
+        <module>../business/domains/organization/backend</module>
+        <module>../apps/cxc-commerce/backend</module>
+    </modules>
+</project>

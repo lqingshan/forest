@@ -1,0 +1,45 @@
+.shell-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 40rpx 28rpx;
+  background: #f4f7f6;
+}
+
+.shell-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28rpx;
+}
+
+.shell-surface {
+  padding: 28rpx;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 28rpx rgba(20, 45, 38, 0.08);
+}
+
+.shell-title {
+  color: #13231f;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.shell-desc {
+  color: #6b7a76;
+  font-size: 26rpx;
+  line-height: 1.6;
+}
+
+.shell-error {
+  color: #b42318;
+  font-size: 24rpx;
+}
+
+.shell-button-ghost {
+  width: 100%;
+  min-height: 80rpx;
+  border-radius: 40rpx;
+  background: #edf5f2;
+  color: #0f6f58;
+  font-size: 28rpx;
+}

@@ -1,0 +1,13 @@
+<view class="lead-list-panel">
+  <lead-list-summary total-elements="{{totalElements}}"/>
+
+  <lead-search-bar keyword="{{keyword}}" bind:inputkeyword="handleInputKeyword" bind:search="handleSearch"/>
+
+  <text wx:if="{{errorMessage}}" class="lead-list-panel__error">{{errorMessage}}</text>
+
+  <lead-list-empty wx:if="{{!loading && !leads.length}}"/>
+
+  <lead-list-card wx:for="{{leads}}" wx:key="id" lead="{{item}}" bind:taplead="handleTapLead"/>
+
+  <lead-list-loading wx:if="{{loadingMore}}"/>
+</view>

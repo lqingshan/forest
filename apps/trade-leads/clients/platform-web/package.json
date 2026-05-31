@@ -1,0 +1,27 @@
+{
+  "name": "@forest/trade-leads-platform-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@forest/lead": "workspace:*",
+    "@forest/point": "workspace:*",
+    "@forest/ui-kit": "workspace:*",
+    "@forest/user": "workspace:*",
+    "@forest/user-point": "workspace:*",
+    "vue": "workspace:*",
+    "vue-router": "^4.6.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@vitejs/plugin-vue": "workspace:*",
+    "typescript": "workspace:*",
+    "vite": "workspace:*"
+  }
+}

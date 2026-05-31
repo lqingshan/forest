@@ -1,0 +1,28 @@
+.point-balance-card {
+  padding: 28rpx;
+  border-radius: 32rpx;
+  background: linear-gradient(135deg, #16324b, #256d94 60%, #6cb1b8);
+  color: #ffffff;
+}
+
+.point-balance-card__label {
+  font-size: 24rpx;
+  opacity: 0.72;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.point-balance-card__value {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 64rpx;
+  font-weight: 700;
+}
+
+.point-balance-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18rpx;
+  margin-top: 16rpx;
+  font-size: 26rpx;
+}

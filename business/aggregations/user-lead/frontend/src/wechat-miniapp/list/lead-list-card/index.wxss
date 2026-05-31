@@ -1,0 +1,74 @@
+.lead-list-card {
+  padding: 26rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  border-radius: 32rpx;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18rpx 42rpx rgba(27, 44, 58, 0.09);
+  border: 1rpx solid rgba(29, 44, 55, 0.06);
+}
+
+.lead-list-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20rpx;
+  color: #61788d;
+  font-size: 24rpx;
+}
+
+.lead-list-card__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+}
+
+.lead-list-card__pill--success {
+  background: rgba(16, 145, 102, 0.12);
+  color: #0f7b5e;
+}
+
+.lead-list-card__pill--pending {
+  background: rgba(196, 120, 25, 0.13);
+  color: #9c5f0f;
+}
+
+.lead-list-card__name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #122f45;
+}
+
+.lead-list-card__category {
+  color: #42627c;
+  font-size: 28rpx;
+}
+
+.lead-list-card__info {
+  display: grid;
+  gap: 14rpx;
+}
+
+.lead-list-card__info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+  color: #20364a;
+}
+
+.lead-list-card__label {
+  font-size: 22rpx;
+  color: #61788d;
+}
+
+.lead-list-card__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0d6e62;
+  font-weight: 700;
+}

@@ -1,0 +1,35 @@
+<view class="current-user-card">
+  <view class="current-user-card__heading">
+    <view class="current-user-card__avatar-wrap" bindtap="handleAvatarTap">
+      <image
+        wx:if="{{user && user.avatarUrl}}"
+        class="current-user-card__avatar"
+        src="{{user.avatarUrl}}"
+        mode="aspectFill"
+      />
+      <text wx:else class="current-user-card__avatar-placeholder">
+        {{summary.initial}}
+      </text>
+      <view wx:if="{{uploadingAvatar}}" class="current-user-card__avatar-mask">
+        <text>上传中</text>
+      </view>
+    </view>
+    <view class="current-user-card__identity">
+      <text class="current-user-card__title">{{summary.title}}</text>
+      <text class="current-user-card__desc">{{summary.description}}</text>
+    </view>
+  </view>
+
+  <view class="current-user-card__row">
+    <text class="current-user-card__label">账户状态</text>
+    <text>{{user ? user.status : '--'}}</text>
+  </view>
+  <view class="current-user-card__row">
+    <text class="current-user-card__label">手机号</text>
+    <text>{{user && user.phone ? user.phone : '未绑定'}}</text>
+  </view>
+  <view class="current-user-card__row">
+    <text class="current-user-card__label">邮箱</text>
+    <text>{{user && user.email ? user.email : '未填写'}}</text>
+  </view>
+</view>

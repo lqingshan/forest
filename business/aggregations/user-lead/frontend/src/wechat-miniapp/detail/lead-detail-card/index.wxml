@@ -1,0 +1,22 @@
+<view class="lead-detail-card">
+  <view class="lead-detail-card__hero">
+    <text class="lead-detail-card__eyebrow">{{lead.countryText}} · {{lead.categoryText}}</text>
+    <text class="lead-detail-card__title">{{lead.name}}</text>
+    <text class="lead-detail-card__desc">{{lead.introText}}</text>
+  </view>
+
+  <view class="lead-detail-card__surface">
+    <view class="lead-detail-card__row">
+      <text class="lead-detail-card__label">电话</text>
+      <text data-field="phone" data-value="{{lead.phone}}" bindtap="copyField">{{lead.phone || '暂无'}}</text>
+    </view>
+    <view class="lead-detail-card__row">
+      <text class="lead-detail-card__label">邮箱</text>
+      <text data-field="email" data-value="{{lead.email}}" bindtap="copyField">{{lead.email || '暂无'}}</text>
+    </view>
+    <view class="lead-detail-card__row">
+      <text class="lead-detail-card__label">网站</text>
+      <text data-field="website" data-value="{{lead.website}}" bindtap="copyField">{{lead.website || '暂无'}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+{
+  "name": "@forest/file",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    "./shared": "./src/shared/index.ts",
+    "./web/upload": "./src/web/upload/index.ts",
+    "./web/viewer": "./src/web/viewer/index.ts",
+    "./wechat-miniapp/upload": "./src/wechat-miniapp/upload/index.ts",
+    "./wechat-miniapp/viewer": "./src/wechat-miniapp/viewer/index.ts"
+  },
+  "dependencies": {
+    "@forest/http-client": "workspace:*",
+    "vue": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

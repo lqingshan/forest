@@ -1,0 +1,20 @@
+{
+  "name": "@forest/payment",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    "./wechat-miniapp/payment": "./src/wechat-miniapp/payment/index.ts"
+  },
+  "dependencies": {
+    "@forest/http-client": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

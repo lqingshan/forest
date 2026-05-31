@@ -1,0 +1,17 @@
+<view class="wechat-phone-login-panel">
+  <view class="wechat-phone-login-panel__heading">
+    <text class="wechat-phone-login-panel__title">{{loginText.title}}</text>
+    <text class="wechat-phone-login-panel__desc">{{loginText.description}}</text>
+  </view>
+
+  <button
+    class="wechat-phone-login-panel__submit"
+    loading="{{submitting}}"
+    open-type="getPhoneNumber"
+    bindgetphonenumber="handleGetPhoneNumber"
+  >
+    {{loginText.buttonText}}
+  </button>
+
+  <text wx:if="{{errorMessage}}" class="wechat-phone-login-panel__error">{{errorMessage}}</text>
+</view>

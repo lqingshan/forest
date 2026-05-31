@@ -1,0 +1,3 @@
+<view class="unlocked-lead-empty">
+  <text>{{emptyText}}</text>
+</view>

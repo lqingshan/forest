@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "支付结果",
+  "usingComponents": {
+    "recharge-result-card": "../../modules/forest-recharge/wechat-miniapp/recharge/recharge-result-card/index"
+  }
+}

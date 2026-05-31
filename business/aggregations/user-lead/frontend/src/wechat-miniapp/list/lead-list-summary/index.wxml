@@ -1,0 +1,5 @@
+<view class="lead-list-summary">
+  <text class="lead-list-summary__eyebrow">{{summary.eyebrow}}</text>
+  <text class="lead-list-summary__title">{{summary.title}}</text>
+  <text class="lead-list-summary__desc">{{summary.description}}</text>
+</view>

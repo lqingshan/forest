@@ -1,0 +1,8 @@
+.f-field-error {
+  display: block;
+  margin: var(--forest-field-error-margin, 0);
+  color: var(--forest-field-error-color, #b42318);
+  font-size: var(--forest-field-error-font-size, 24rpx);
+  line-height: var(--forest-field-error-line-height, 1.5);
+  word-break: break-all;
+}

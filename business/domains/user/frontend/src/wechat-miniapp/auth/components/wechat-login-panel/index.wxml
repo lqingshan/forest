@@ -1,0 +1,23 @@
+<view class="wechat-login-panel">
+  <view class="wechat-login-panel__heading">
+    <text class="wechat-login-panel__title">{{loginText.title}}</text>
+    <text class="wechat-login-panel__desc">{{loginText.description}}</text>
+  </view>
+
+  <view class="wechat-login-panel__tips">
+    <view wx:for="{{loginText.steps}}" wx:key="*this" class="wechat-login-panel__tip">
+      <text class="wechat-login-panel__tip-index">0{{index + 1}}</text>
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <button
+    class="wechat-login-panel__submit"
+    loading="{{submitting}}"
+    bindtap="handleLogin"
+  >
+    {{loginText.buttonText}}
+  </button>
+
+  <text wx:if="{{errorMessage}}" class="wechat-login-panel__error">{{errorMessage}}</text>
+</view>

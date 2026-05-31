@@ -1,0 +1,26 @@
+{
+  "name": "@forest/ui-kit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./theme": "./src/theme/index.ts",
+    "./theme/foundation.css": "./src/theme/foundation.css"
+  },
+  "dependencies": {
+    "vue": "workspace:*"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.4.6",
+    "@vitejs/plugin-vue": "workspace:*",
+    "jsdom": "workspace:*",
+    "typescript": "workspace:*",
+    "vite": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

@@ -1,0 +1,21 @@
+<view class="shell-page login-page">
+  <view class="shell-stack">
+    <view class="shell-surface login-page__intro">
+      <text class="shell-title">CXC Commerce</text>
+      <text class="shell-desc">请选择登录方式进入用户端。</text>
+    </view>
+
+    <wechat-phone-login-panel
+      submitting="{{phoneSubmitting}}"
+      error-message="{{phoneErrorMessage}}"
+      bind:phonelogin="handleWechatPhoneLogin"
+      bind:phoneerror="handleWechatPhoneError"
+    />
+
+    <wechat-login-panel
+      submitting="{{submitting}}"
+      error-message="{{errorMessage}}"
+      bind:login="handleWechatLogin"
+    />
+  </view>
+</view>

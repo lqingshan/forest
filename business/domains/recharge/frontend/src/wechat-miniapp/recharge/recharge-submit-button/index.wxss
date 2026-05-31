@@ -1,0 +1,8 @@
+.recharge-submit-button {
+  border-radius: 999rpx;
+  font-size: 30rpx;
+  line-height: 1;
+  background: linear-gradient(135deg, #0f6b5b, #17a37a);
+  color: #ffffff;
+  box-shadow: 0 16rpx 30rpx rgba(15, 107, 91, 0.18);
+}

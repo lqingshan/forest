@@ -1,0 +1,11 @@
+<view class="unlocked-lead-card" bindtap="handleTap">
+  <view class="unlocked-lead-card__row">
+    <text class="unlocked-lead-card__name">{{lead.name}}</text>
+    <text class="unlocked-lead-card__pill">已解锁</text>
+  </view>
+  <text class="unlocked-lead-card__meta">{{lead.country}} · {{lead.category}}</text>
+  <view class="unlocked-lead-card__contact">
+    <text>电话：{{lead.phone}}</text>
+    <text>网站：{{lead.website}}</text>
+  </view>
+</view>

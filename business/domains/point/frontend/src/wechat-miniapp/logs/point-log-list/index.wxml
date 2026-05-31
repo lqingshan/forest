@@ -1,0 +1,16 @@
+<view class="point-log-list">
+  <view wx:if="{{empty}}" class="point-log-list__empty">
+    <text>{{emptyText}}</text>
+  </view>
+
+  <view wx:for="{{logs}}" wx:key="id" class="point-log-list__item">
+    <view>
+      <text class="point-log-list__amount {{item.direction === 'INCOME' ? 'point-log-list__amount--income' : 'point-log-list__amount--spend'}}">{{item.amountText}}</text>
+      <text class="point-log-list__source">{{item.sourceText}}</text>
+    </view>
+    <view class="point-log-list__meta">
+      <text>余额 {{item.balanceAfter}}</text>
+      <text>{{item.createdTime}}</text>
+    </view>
+  </view>
+</view>

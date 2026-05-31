@@ -1,0 +1,15 @@
+{
+  "name": "@forest/wechat-miniapp-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit"
+  },
+  "exports": {
+    "./components": "./src/components/index.ts"
+  },
+  "devDependencies": {
+    "typescript": "workspace:*"
+  }
+}

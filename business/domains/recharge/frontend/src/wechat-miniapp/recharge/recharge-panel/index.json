@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "recharge-summary": "../recharge-summary/index",
+    "recharge-package-selector": "../package-selector/index",
+    "recharge-submit-button": "../recharge-submit-button/index"
+  }
+}

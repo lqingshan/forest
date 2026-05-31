@@ -1,0 +1,17 @@
+<view class="shell-page">
+  <view class="shell-stack">
+    <view class="shell-back" bindtap="goBack">
+      <text>‹</text>
+      <text>返回</text>
+    </view>
+
+    <lead-detail-panel
+      lead="{{lead}}"
+      unlocking="{{unlocking}}"
+      unlock-cost="{{unlockCost}}"
+      error-message="{{errorMessage}}"
+      bind:copyfield="copyField"
+      bind:unlock="handleUnlock"
+    />
+  </view>
+</view>

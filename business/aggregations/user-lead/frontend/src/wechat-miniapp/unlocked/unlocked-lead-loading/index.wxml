@@ -1,0 +1,1 @@
+<view class="unlocked-lead-loading">{{loadingText}}</view>

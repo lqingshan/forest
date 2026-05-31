@@ -1,0 +1,10 @@
+<view class="shell-page">
+  <view class="shell-stack">
+    <recharge-result-card order="{{order}}" status="{{status}}" title="{{title}}" description="{{description}}"/>
+
+    <button wx:if="{{status === 'processing'}}" class="shell-button-secondary" loading="{{loading}}" bindtap="refreshStatus">刷新状态</button>
+    <button wx:if="{{status !== 'processing'}}" class="shell-button-primary" bindtap="goMe">回到我的</button>
+    <button class="shell-button-ghost" bindtap="goRechargeAgain">继续充值</button>
+    <button class="shell-button-ghost" bindtap="goLeads">返回线索池</button>
+  </view>
+</view>

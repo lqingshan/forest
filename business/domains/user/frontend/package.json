@@ -1,0 +1,35 @@
+{
+  "name": "@forest/user",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    "./web/auth": "./src/web/auth/index.ts",
+    "./web/me": "./src/web/me/index.ts",
+    "./web/user-management": "./src/web/user-management/index.ts",
+    "./native-app/auth": "./src/native-app/auth/index.ts",
+    "./wechat-miniapp/auth": "./src/wechat-miniapp/auth/index.ts",
+    "./wechat-miniapp/me": "./src/wechat-miniapp/me/index.ts",
+    "./shared/user": "./src/shared/user.ts"
+  },
+  "dependencies": {
+    "@forest/api-contracts": "workspace:*",
+    "@forest/file": "workspace:*",
+    "@forest/http-client": "workspace:*",
+    "@forest/ui-kit": "workspace:*",
+    "@forest/verification": "workspace:*",
+    "vue": "workspace:*"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.4.6",
+    "typescript": "workspace:*",
+    "vite": "workspace:*",
+    "@vitejs/plugin-vue": "workspace:*",
+    "jsdom": "^25.0.1",
+    "vitest": "workspace:*"
+  }
+}

@@ -1,0 +1,11 @@
+<view class="unlocked-lead-panel">
+  <unlocked-lead-summary/>
+
+  <text wx:if="{{errorMessage}}" class="unlocked-lead-panel__error">{{errorMessage}}</text>
+
+  <unlocked-lead-empty wx:if="{{!loading && !leads.length}}"/>
+
+  <unlocked-lead-card wx:for="{{leads}}" wx:key="id" lead="{{item}}" bind:taplead="handleTapLead"/>
+
+  <unlocked-lead-loading wx:if="{{loadingMore}}"/>
+</view>

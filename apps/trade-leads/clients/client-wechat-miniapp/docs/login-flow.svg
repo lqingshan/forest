@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1040" viewBox="0 0 1640 1040" role="img" aria-labelledby="title desc">
+  <title id="title">微信小程序登录流程图（包、文件、方法包含关系）</title>
+  <desc id="desc">展示微信小程序登录流程中的包、文件与方法的包含关系，以及主要调用顺序。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#475569"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 28px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .subtitle { font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+
+      .pkg { stroke-width: 2; rx: 18; ry: 18; }
+      .pkg-app { fill: #eff6ff; stroke: #93c5fd; }
+      .pkg-session { fill: #fffbeb; stroke: #fcd34d; }
+      .pkg-platform { fill: #f5f3ff; stroke: #c4b5fd; }
+      .pkg-business { fill: #fef2f2; stroke: #fca5a5; }
+
+      .pkgTitle { font: 700 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #0f172a; }
+      .pkgHint { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+
+      .file { fill: #ffffff; stroke: #94a3b8; stroke-width: 1.8; rx: 14; ry: 14; }
+      .fileTitle { font: 700 15px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .fileMeta { font: 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #64748b; }
+
+      .method { fill: #1e293b; rx: 10; ry: 10; }
+      .methodText { font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #ffffff; }
+      .apiMethod { fill: #7f1d1d; }
+
+      .arrow { fill: none; stroke: #475569; stroke-width: 2.5; marker-end: url(#arrow); }
+      .returnArrow { fill: none; stroke: #94a3b8; stroke-width: 2; stroke-dasharray: 6 5; marker-end: url(#arrow); }
+      .arrowLabel { font: 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .legend { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1640" height="1040"/>
+  <text class="title" x="820" y="42" text-anchor="middle">微信小程序登录流程</text>
+  <text class="subtitle" x="820" y="68" text-anchor="middle">外层是包，包里包含文件，文件里包含方法；箭头只表示方法之间的主要调用顺序</text>
+
+  <!-- Package: app -->
+  <rect class="pkg pkg-app" x="40" y="96" width="350" height="880"/>
+  <text class="pkgTitle" x="60" y="124">apps/trade-leads/clients/client-wechat-miniapp</text>
+  <text class="pkgHint" x="60" y="146">app 页面层 / app 装配层</text>
+
+  <rect class="file" x="70" y="190" width="290" height="150"/>
+  <text class="fileTitle" x="92" y="220">pages/login/index.ts</text>
+  <text class="fileMeta" x="92" y="242">Page 文件</text>
+  <rect class="method" x="92" y="268" width="246" height="34"/>
+  <text class="methodText" x="105" y="290">Page.handleWechatLogin</text>
+
+  <rect class="file" x="70" y="390" width="290" height="150"/>
+  <text class="fileTitle" x="92" y="420">miniapp-app.ts</text>
+  <text class="fileMeta" x="92" y="442">app facade</text>
+  <rect class="method" x="92" y="468" width="246" height="34"/>
+  <text class="methodText" x="105" y="490">loginWithWechat</text>
+
+  <rect class="file" x="70" y="760" width="290" height="150"/>
+  <text class="fileTitle" x="92" y="790">pages/login/index.ts</text>
+  <text class="fileMeta" x="92" y="812">Page 文件</text>
+  <rect class="method" x="92" y="838" width="246" height="34"/>
+  <text class="methodText" x="105" y="860">Page.openRedirect</text>
+
+  <!-- Package: session -->
+  <rect class="pkg pkg-session" x="430" y="96" width="350" height="880"/>
+  <text class="pkgTitle" x="450" y="124">base-frontend/packages/wechat-miniapp-client-session</text>
+  <text class="pkgHint" x="450" y="146">通用 session 编排层</text>
+
+  <rect class="file" x="460" y="350" width="290" height="220"/>
+  <text class="fileTitle" x="482" y="380">src/index.ts</text>
+  <text class="fileMeta" x="482" y="402">createWechatClientSession 工厂</text>
+  <rect class="method" x="482" y="430" width="246" height="34"/>
+  <text class="methodText" x="495" y="452">loginWithWechat</text>
+
+  <!-- Package: platform -->
+  <rect class="pkg pkg-platform" x="820" y="96" width="350" height="880"/>
+  <text class="pkgTitle" x="840" y="124">base-frontend/packages/wechat-miniapp-platform</text>
+  <text class="pkgHint" x="840" y="146">微信平台适配层</text>
+
+  <rect class="file" x="850" y="170" width="290" height="170"/>
+  <text class="fileTitle" x="872" y="200">src/wechat-login.ts</text>
+  <text class="fileMeta" x="872" y="222">微信登录凭证适配</text>
+  <rect class="method" x="872" y="248" width="246" height="34"/>
+  <text class="methodText" x="885" y="270">requestWechatLoginCode</text>
+  <rect class="method" x="872" y="290" width="246" height="34"/>
+  <text class="methodText" x="885" y="312">wx.login</text>
+
+  <rect class="file" x="850" y="520" width="290" height="170"/>
+  <text class="fileTitle" x="872" y="550">src/session-store.ts</text>
+  <text class="fileMeta" x="872" y="572">session store</text>
+  <rect class="method" x="872" y="598" width="246" height="34"/>
+  <text class="methodText" x="885" y="620">saveSessionTokens</text>
+
+  <rect class="file" x="850" y="730" width="290" height="170"/>
+  <text class="fileTitle" x="872" y="760">src/session-store.ts</text>
+  <text class="fileMeta" x="872" y="782">session store</text>
+  <rect class="method" x="872" y="808" width="246" height="34"/>
+  <text class="methodText" x="885" y="830">saveCachedUserIfTokenMatches</text>
+
+  <!-- Package: business -->
+  <rect class="pkg pkg-business" x="1210" y="96" width="390" height="880"/>
+  <text class="pkgTitle" x="1230" y="124">business/domains/user/frontend</text>
+  <text class="pkgHint" x="1230" y="146">user 业务 API 层</text>
+
+  <rect class="file" x="1240" y="280" width="330" height="180"/>
+  <text class="fileTitle" x="1262" y="310">src/wechat-miniapp/auth/api.ts</text>
+  <text class="fileMeta" x="1262" y="332">登录接口</text>
+  <rect class="method apiMethod" x="1262" y="358" width="286" height="34"/>
+  <text class="methodText" x="1275" y="380">loginByWechat</text>
+  <rect class="method apiMethod" x="1262" y="400" width="286" height="34"/>
+  <text class="methodText" x="1275" y="422">POST /api/auth/wechat-miniapp/login</text>
+
+  <rect class="file" x="1240" y="610" width="330" height="180"/>
+  <text class="fileTitle" x="1262" y="640">src/wechat-miniapp/me/api.ts</text>
+  <text class="fileMeta" x="1262" y="662">当前用户接口</text>
+  <rect class="method apiMethod" x="1262" y="688" width="286" height="34"/>
+  <text class="methodText" x="1275" y="710">fetchCurrentUser</text>
+  <rect class="method apiMethod" x="1262" y="730" width="286" height="34"/>
+  <text class="methodText" x="1275" y="752">GET /api/client/user/me</text>
+
+  <!-- Call arrows between methods -->
+  <path class="arrow" d="M338 285 C390 285, 390 485, 482 447"/>
+  <text class="arrowLabel" x="392" y="340">调用门面</text>
+
+  <path class="arrow" d="M338 485 C390 485, 390 447, 482 447"/>
+  <text class="arrowLabel" x="396" y="470">进入工厂实现</text>
+
+  <path class="arrow" d="M728 447 C790 447, 790 265, 872 265"/>
+  <text class="arrowLabel" x="792" y="330">先拿 code</text>
+  <path class="returnArrow" d="M872 307 C790 307, 790 432, 728 447"/>
+  <text class="arrowLabel" x="796" y="394">返回 code</text>
+
+  <path class="arrow" d="M728 447 C980 447, 1040 375, 1262 375"/>
+  <text class="arrowLabel" x="1020" y="430">再用 code 登录</text>
+  <path class="returnArrow" d="M1262 417 C1040 470, 980 470, 728 447"/>
+  <text class="arrowLabel" x="1038" y="486">返回 loginResult</text>
+
+  <path class="arrow" d="M728 447 C790 447, 790 615, 872 615"/>
+  <text class="arrowLabel" x="792" y="532">保存 token</text>
+
+  <path class="arrow" d="M728 447 C1010 447, 1060 705, 1262 705"/>
+  <text class="arrowLabel" x="1035" y="610">再查 currentUser</text>
+  <path class="returnArrow" d="M1262 747 C1060 792, 1010 792, 728 447"/>
+  <text class="arrowLabel" x="1048" y="808">返回 currentUser</text>
+
+  <path class="arrow" d="M728 447 C790 447, 790 825, 872 825"/>
+  <text class="arrowLabel" x="792" y="718">安全缓存用户</text>
+
+  <path class="arrow" d="M482 447 C390 447, 390 855, 338 855"/>
+  <text class="arrowLabel" x="354" y="676">登录完成后回页面</text>
+
+  <text class="legend" x="40" y="1010">阅读方式：先看包包含文件，再看文件包含的方法，最后顺着方法之间的箭头看调用链。</text>
+</svg>

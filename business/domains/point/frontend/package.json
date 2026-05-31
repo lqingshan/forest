@@ -1,0 +1,28 @@
+{
+  "name": "@forest/point",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    "./wechat-miniapp/balance": "./src/wechat-miniapp/balance/index.ts",
+    "./wechat-miniapp/logs": "./src/wechat-miniapp/logs/index.ts",
+    "./platform-web/point-display": "./src/platform-web/point-display/index.ts"
+  },
+  "dependencies": {
+    "@forest/api-contracts": "workspace:*",
+    "@forest/http-client": "workspace:*",
+    "vue": "workspace:*"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.4.6",
+    "@vitejs/plugin-vue": "workspace:*",
+    "jsdom": "^25.0.1",
+    "typescript": "workspace:*",
+    "vite": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

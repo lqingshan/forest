@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "已解锁线索",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "bottom-nav": "/components/bottom-nav/index",
+    "unlocked-lead-panel": "../../modules/forest-user-lead/wechat-miniapp/unlocked/unlocked-lead-panel/index"
+  }
+}

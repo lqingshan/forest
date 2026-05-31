@@ -1,0 +1,85 @@
+.current-user-card {
+  padding: 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  border-radius: 32rpx;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18rpx 42rpx rgba(27, 44, 58, 0.09);
+  border: 1rpx solid rgba(29, 44, 55, 0.06);
+}
+
+.current-user-card__heading {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.current-user-card__avatar-wrap {
+  position: relative;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 999rpx;
+  overflow: hidden;
+  flex: none;
+  background: var(--forest-user-avatar-bg, #e9f0f6);
+}
+
+.current-user-card__avatar,
+.current-user-card__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.current-user-card__avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest-user-avatar-color, #17324d);
+  font-size: 42rpx;
+  font-weight: 700;
+}
+
+.current-user-card__avatar-mask {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.42);
+  color: #ffffff;
+  font-size: 22rpx;
+}
+
+.current-user-card__identity {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.current-user-card__title {
+  font-size: 42rpx;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #17324d;
+}
+
+.current-user-card__desc {
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: #60758a;
+}
+
+.current-user-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 24rpx;
+  font-size: 28rpx;
+  color: #22394d;
+}
+
+.current-user-card__label {
+  color: #6a7c8f;
+}

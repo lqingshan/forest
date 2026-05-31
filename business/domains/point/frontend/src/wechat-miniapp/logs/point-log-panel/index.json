@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "point-log-summary": "../point-log-summary/index",
+    "point-log-list": "../point-log-list/index"
+  }
+}

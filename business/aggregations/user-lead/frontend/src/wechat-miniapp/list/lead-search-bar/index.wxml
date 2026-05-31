@@ -1,0 +1,11 @@
+<view class="lead-search-bar">
+  <input
+    class="lead-search-bar__input"
+    placeholder="搜索采购商名称或关键词"
+    value="{{keyword}}"
+    bindinput="handleInput"
+    confirm-type="search"
+    bindconfirm="handleSearch"
+  />
+  <button class="lead-search-bar__button" bindtap="handleSearch">搜索</button>
+</view>

@@ -1,0 +1,13 @@
+<view class="lead-detail-panel">
+  <text wx:if="{{errorMessage}}" class="lead-detail-panel__error">{{errorMessage}}</text>
+
+  <lead-detail-card wx:if="{{lead}}" lead="{{lead}}" bind:copyfield="handleCopyField"/>
+
+  <lead-unlock-panel
+    wx:if="{{lead}}"
+    lead="{{lead}}"
+    unlock-cost="{{unlockCost}}"
+    unlocking="{{unlocking}}"
+    bind:unlock="handleUnlock"
+  />
+</view>

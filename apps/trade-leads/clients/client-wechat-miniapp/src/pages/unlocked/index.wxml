@@ -1,0 +1,13 @@
+<view class="shell-page">
+  <view class="shell-stack">
+    <unlocked-lead-panel
+      leads="{{leads}}"
+      loading="{{loading}}"
+      loading-more="{{loadingMore}}"
+      error-message="{{errorMessage}}"
+      bind:taplead="openDetail"
+    />
+  </view>
+
+  <bottom-nav current="unlocked"/>
+</view>

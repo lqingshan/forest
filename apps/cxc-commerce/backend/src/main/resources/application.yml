@@ -1,0 +1,116 @@
+server:
+  port: ${SERVER_PORT:8082}
+
+jwt:
+  secret: ${JWT_SECRET:your-secret-key-must-be-at-least-256-bits-long-for-security}
+  expiration: 7200000
+  refresh-expiration: 1209600000
+
+forest:
+  sms:
+    provider: ${FOREST_SMS_PROVIDER:disabled}
+    default-sign-name: ${FOREST_SMS_DEFAULT_SIGN_NAME:}
+    default-template-code: ${FOREST_SMS_DEFAULT_TEMPLATE_CODE:}
+    verification-template-code: ${FOREST_SMS_VERIFICATION_TEMPLATE_CODE:}
+    log:
+      content-mode: ${FOREST_SMS_LOG_CONTENT_MODE:MASKED_PARTIAL}
+      mask-visible-tail: ${FOREST_SMS_LOG_MASK_VISIBLE_TAIL:2}
+    aliyun:
+      endpoint: ${FOREST_SMS_ALIYUN_ENDPOINT:dysmsapi.aliyuncs.com}
+      access-key-id: ${FOREST_SMS_ALIYUN_ACCESS_KEY_ID:${ALIBABA_CLOUD_ACCESS_KEY_ID:}}
+      access-key-secret: ${FOREST_SMS_ALIYUN_ACCESS_KEY_SECRET:${ALIBABA_CLOUD_ACCESS_KEY_SECRET:}}
+  verification:
+    sms:
+      code: ${AUTH_SMS_CODE:121314}
+      code-ttl: ${FOREST_VERIFICATION_SMS_CODE_TTL:5m}
+      max-attempts: ${FOREST_VERIFICATION_SMS_MAX_ATTEMPTS:5}
+      send-interval: ${FOREST_VERIFICATION_SMS_SEND_INTERVAL:60s}
+      daily-limit: ${FOREST_VERIFICATION_SMS_DAILY_LIMIT:10}
+      ticket-ttl: ${FOREST_VERIFICATION_TICKET_TTL:10m}
+  carrier-auth:
+    provider: ${FOREST_CARRIER_AUTH_PROVIDER:disabled}
+    mock-phone: ${FOREST_CARRIER_AUTH_MOCK_PHONE:+8613800138000}
+    aliyun:
+      endpoint: ${FOREST_CARRIER_AUTH_ALIYUN_ENDPOINT:dypnsapi.aliyuncs.com}
+      access-key-id: ${FOREST_CARRIER_AUTH_ALIYUN_ACCESS_KEY_ID:${ALIBABA_CLOUD_ACCESS_KEY_ID:}}
+      access-key-secret: ${FOREST_CARRIER_AUTH_ALIYUN_ACCESS_KEY_SECRET:${ALIBABA_CLOUD_ACCESS_KEY_SECRET:}}
+  file:
+    app-code: cxc-commerce
+    env: ${FOREST_FILE_ENV:local}
+    storage:
+      provider: aliyun-oss
+      aliyun-oss:
+        endpoint: ${ALIYUN_OSS_ENDPOINT:}
+        access-key-id: ${ALIYUN_OSS_ACCESS_KEY_ID:}
+        access-key-secret: ${ALIYUN_OSS_ACCESS_KEY_SECRET:}
+        buckets:
+          cxc-commerce: ${CXC_COMMERCE_OSS_BUCKET:cxc-commerce-file}
+  redis:
+    app-code: cxc-commerce
+  platform:
+    organization-no: ${FOREST_PLATFORM_ORGANIZATION_NO:ORG_PLATFORM}
+    boundary-id: ${FOREST_PLATFORM_BOUNDARY_ID:0}
+  client-apps:
+    cxc-commerce-buyer-wechat-miniapp:
+      client-type: WECHAT_MINIAPP
+      enabled: true
+    cxc-commerce-buyer-mobile-h5:
+      client-type: MOBILE_H5
+      enabled: true
+    cxc-commerce-merchant-web:
+      client-type: PC_WEB
+      enabled: true
+    cxc-commerce-platform-web:
+      client-type: PC_WEB
+      enabled: true
+  wechat:
+    miniapps:
+      cxc-commerce-buyer-wechat-miniapp:
+        appid: ${CXC_COMMERCE_BUYER_WECHAT_MINIAPP_APPID:}
+        secret: ${CXC_COMMERCE_BUYER_WECHAT_MINIAPP_SECRET:}
+        mock-enabled: ${CXC_COMMERCE_BUYER_WECHAT_MINIAPP_MOCK_ENABLED:false}
+
+spring:
+  application:
+    name: cxc-commerce-backend
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/cxc_commerce_local}
+    username: ${SPRING_DATASOURCE_USERNAME:forest}
+    password: ${SPRING_DATASOURCE_PASSWORD:forest}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      pool-name: CxcCommerceBackendHikariPool
+      connection-init-sql: SET TIME ZONE 'Asia/Shanghai'
+
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DATABASE:0}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: true
+    locations:
+      - classpath:db/migration/user
+      - classpath:db/migration/notification
+      - classpath:db/migration/file
+      - classpath:db/migration/access
+      - classpath:db/migration/organization

@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:trade_leads_test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    hikari:
+      connection-init-sql: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: false
+
+jwt:
+  secret: test-secret-key-must-be-at-least-32-bytes-long
+
+forest:
+  redis:
+    app-code: trade-leads
+  sms:
+    provider: mock
+  verification:
+    sms:
+      code: 121314
+  client-apps:
+    trade-leads-miniapp:
+      client-type: WECHAT_MINIAPP
+      enabled: true
+    trade-leads-platform-web:
+      client-type: PC_WEB
+      enabled: true
+  wechat:
+    miniapps:
+      trade-leads-miniapp:
+        mock-enabled: true
+
+wechat:
+  pay:
+    mock-enabled: true

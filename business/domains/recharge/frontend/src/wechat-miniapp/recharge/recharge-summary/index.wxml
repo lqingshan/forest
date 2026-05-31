@@ -1,0 +1,5 @@
+<view class="recharge-summary">
+  <text class="recharge-summary__eyebrow">{{summary.eyebrow}}</text>
+  <text class="recharge-summary__title">{{summary.title}}</text>
+  <text class="recharge-summary__desc">{{summary.description}}</text>
+</view>

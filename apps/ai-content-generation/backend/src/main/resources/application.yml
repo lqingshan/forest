@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:8084}
+
+spring:
+  application:
+    name: ai-content-generation-backend
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ai_content_generation_local}
+    username: ${SPRING_DATASOURCE_USERNAME:forest}
+    password: ${SPRING_DATASOURCE_PASSWORD:forest}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: false

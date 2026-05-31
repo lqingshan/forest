@@ -1,0 +1,42 @@
+.wechat-phone-login-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  padding: 28rpx;
+  border-radius: 16rpx;
+  background: #ffffff;
+  box-shadow: 0 8rpx 28rpx rgba(20, 45, 38, 0.08);
+}
+
+.wechat-phone-login-panel__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.wechat-phone-login-panel__title {
+  color: #13231f;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.wechat-phone-login-panel__desc {
+  color: #6b7a76;
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+
+.wechat-phone-login-panel__submit {
+  width: 100%;
+  min-height: 84rpx;
+  border-radius: 42rpx;
+  background: #0f8f6f;
+  color: #ffffff;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.wechat-phone-login-panel__error {
+  color: #b42318;
+  font-size: 24rpx;
+}

@@ -1,0 +1,9 @@
+{
+  "desc": "trade leads miniapp sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

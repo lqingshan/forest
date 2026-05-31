@@ -1,0 +1,5 @@
+<view class="point-log-summary">
+  <text class="point-log-summary__eyebrow">{{summary.eyebrow}}</text>
+  <text class="point-log-summary__title">{{summary.title}}</text>
+  <text class="point-log-summary__desc">{{summary.description}}</text>
+</view>

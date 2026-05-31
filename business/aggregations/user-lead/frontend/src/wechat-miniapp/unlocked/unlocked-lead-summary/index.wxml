@@ -1,0 +1,5 @@
+<view class="unlocked-lead-summary">
+  <text class="unlocked-lead-summary__eyebrow">{{summary.eyebrow}}</text>
+  <text class="unlocked-lead-summary__title">{{summary.title}}</text>
+  <text class="unlocked-lead-summary__desc">{{summary.description}}</text>
+</view>

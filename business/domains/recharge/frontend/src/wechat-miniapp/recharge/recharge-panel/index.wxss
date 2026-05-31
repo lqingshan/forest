@@ -1,0 +1,10 @@
+.recharge-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.recharge-panel__error {
+  color: #b2504d;
+  font-size: 26rpx;
+}

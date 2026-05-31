@@ -1,0 +1,73 @@
+.forest-single-file-viewer {
+  display: flex;
+  gap: 20rpx;
+  align-items: flex-start;
+}
+
+.forest-single-file-viewer__media {
+  width: 180rpx;
+  height: 136rpx;
+  border-radius: var(--forest-file-viewer-radius, 12rpx);
+  overflow: hidden;
+  background: var(--forest-file-viewer-media-bg, #f4f7fb);
+  flex: none;
+}
+
+.forest-single-file-viewer__image,
+.forest-single-file-viewer__video {
+  width: 100%;
+  height: 100%;
+}
+
+.forest-single-file-viewer__audio-button,
+.forest-single-file-viewer__button {
+  min-height: 56rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid var(--forest-file-viewer-border, #d6dde8);
+  border-radius: var(--forest-file-viewer-button-radius, 10rpx);
+  background: var(--forest-file-viewer-button-bg, #ffffff);
+  color: var(--forest-file-viewer-button-color, #1f2937);
+  font-size: 24rpx;
+  line-height: 56rpx;
+}
+
+.forest-single-file-viewer__audio-button {
+  margin: 40rpx auto 0;
+}
+
+.forest-single-file-viewer__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest-file-viewer-muted, #6b7280);
+  font-size: 24rpx;
+}
+
+.forest-single-file-viewer__body {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.forest-single-file-viewer__title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: var(--forest-file-viewer-title, #1f2937);
+  word-break: break-all;
+}
+
+.forest-single-file-viewer__meta,
+.forest-single-file-viewer__unavailable {
+  color: var(--forest-file-viewer-muted, #6b7280);
+  font-size: 24rpx;
+}
+
+.forest-single-file-viewer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}

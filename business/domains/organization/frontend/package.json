@@ -1,0 +1,28 @@
+{
+  "name": "@forest/organization",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "exports": {
+    "./shared": "./src/shared/index.ts",
+    "./web": "./src/web/index.ts",
+    "./platform-web": "./src/platform-web/index.ts"
+  },
+  "dependencies": {
+    "@forest/file": "workspace:*",
+    "@forest/http-client": "workspace:*",
+    "vue": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "workspace:*",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "typescript": "workspace:*",
+    "vite": "workspace:*",
+    "vitest": "workspace:*"
+  }
+}

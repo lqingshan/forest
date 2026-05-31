@@ -1,0 +1,85 @@
+.file-upload-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+}
+
+.file-upload-panel__title {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.file-upload-panel__button {
+  width: 100%;
+  min-height: 84rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+
+.file-upload-panel__progress {
+  height: 12rpx;
+  overflow: hidden;
+  border-radius: 999rpx;
+  background: var(--forest-file-upload-progress-track, rgba(0, 0, 0, 0.08));
+}
+
+.file-upload-panel__progress-bar {
+  height: 100%;
+  border-radius: 999rpx;
+  background: var(--forest-file-upload-progress-color, currentColor);
+  transition: width 0.2s ease;
+}
+
+.file-upload-panel__progress-text {
+  font-size: 24rpx;
+}
+
+.file-upload-panel__files {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.file-upload-panel__file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18rpx;
+  font-size: 24rpx;
+}
+
+.file-upload-panel__file-main {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.file-upload-panel__file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-upload-panel__file-action {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.file-upload-panel__file-progress,
+.file-upload-panel__file-status,
+.file-upload-panel__file-error {
+  font-size: 24rpx;
+}
+
+.file-upload-panel__retry {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.file-upload-panel__error {
+  font-size: 24rpx;
+}

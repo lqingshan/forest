@@ -1,0 +1,17 @@
+<view class="shell-page">
+  <view class="shell-stack">
+    <lead-list-panel
+      leads="{{leads}}"
+      loading="{{loading}}"
+      loading-more="{{loadingMore}}"
+      keyword="{{keyword}}"
+      total-elements="{{totalElements}}"
+      error-message="{{errorMessage}}"
+      bind:inputkeyword="handleKeywordInput"
+      bind:search="handleSearch"
+      bind:taplead="openDetail"
+    />
+  </view>
+
+  <bottom-nav current="leads"/>
+</view>

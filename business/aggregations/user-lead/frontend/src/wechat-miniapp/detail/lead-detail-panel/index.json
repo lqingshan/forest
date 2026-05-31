@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "lead-detail-card": "../lead-detail-card/index",
+    "lead-unlock-panel": "../lead-unlock-panel/index"
+  }
+}

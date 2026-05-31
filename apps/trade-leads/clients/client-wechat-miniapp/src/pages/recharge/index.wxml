@@ -1,0 +1,18 @@
+<view class="shell-page">
+  <view class="shell-stack">
+    <view class="shell-back" bindtap="goBack">
+      <text>‹</text>
+      <text>返回</text>
+    </view>
+
+    <recharge-panel
+      balance="{{balance}}"
+      packages="{{packages}}"
+      selected-code="{{selectedPackageCode}}"
+      paying="{{paying}}"
+      error-message="{{errorMessage}}"
+      bind:selectpackage="selectPackage"
+      bind:pay="handlePay"
+    />
+  </view>
+</view>
